@@ -2,10 +2,12 @@ import React from 'react';
 
 import GlobalStyle from './styles/global';
 
+import Home from './pages/Home';
+
 const App: React.FC = () => {
   return (
     <>
-      <h1>hello word</h1>
+      <Home />
       <GlobalStyle />
     </>
   );
