@@ -1,6 +1,6 @@
 import React from 'react';
 
-import GlobalStyle from './styles/global.js';
+import GlobalStyle from './styles/global';
 
 const App: React.FC = () => {
   return (
