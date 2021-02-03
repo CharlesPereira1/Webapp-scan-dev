@@ -1,7 +1,10 @@
 import axios from 'axios';
 
 const api = axios.create({
-  baseURL: 'http://10.0.2.2:3000/',
+  baseURL: 'http://localhost:2000/',
 });
 
-export default api;
+// eslint-disable-next-line
+export const getResponse = (ean: string) => {
+  return api.get(`books/${ean}`);
+};

@@ -1,0 +1,12 @@
+{
+  "books": [
+    {
+      "id": "9878548795421",
+      "name": "Código Limpo com React - Habilidades Práticas do Agile Software",
+      "coverUrl": "https://m.media-amazon.com/images/I/41IiBTZOGCL.jpg",
+      "rating": 4.5,
+      "promotionalPrice": 69.09,
+      "price": 129.9
+    }
+  ]
+}
