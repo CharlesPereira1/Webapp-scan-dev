@@ -1,4 +1,5 @@
 import styled from 'styled-components';
+import { colors } from '../../../styles/theme';
 
 export const Video = styled.div`
   position: fixed;
@@ -47,7 +48,7 @@ export const ScanMarker = styled.div`
   }
 
   p {
-    color: #fff;
+    color: ${colors.white};
     font-size: 14px;
     font-style: italic;
     margin-top: 20px;

@@ -1,10 +1,10 @@
 import React, { useEffect, useState } from 'react';
-
-import livro from '../../../assets/livro.jpg';
+import StarRatings from 'react-star-ratings';
 
 import { getResponse } from '../../../services/api';
+import { colors } from '../../../styles/theme';
 
-import { Container } from './styles';
+import { Container, Wrapper, Cover, Info } from './styles';
 
 interface Props {
   codEan: string;
@@ -23,12 +23,6 @@ const Response: React.FC<Props> = ({ codEan }) => {
   const [repoData, setRepoData] = useState<RepoProps[]>([]);
 
   useEffect(() => {
-    // const loadResponse = async () => {
-    //   const books = getResponse(codEan);
-    //   console.log('rescaraio', books);
-    //   // await setRepoData(books);
-    // };
-
     getResponse(codEan).then(res => {
       console.log(res.data);
       setRepoData(res.data);
@@ -40,7 +34,31 @@ const Response: React.FC<Props> = ({ codEan }) => {
   console.log(codEan);
   return (
     <Container>
-      <h1>Response</h1>
+      <Wrapper>
+        <Cover src="https://m.media-amazon.com/images/I/41IiBTZOGCL.jpg" />
+        <Info>
+          <h4>Habilidades Práticas do Agile Software</h4>
+          <div>
+            <StarRatings
+              rating={4.5}
+              starRatedColor={colors.yellow}
+              starDimension="18"
+              starSpacing="0"
+            />
+            {'  '}
+            (4.5)
+          </div>
+
+          <div className="price">
+            <span>R$ 99,90</span>
+            {'  '}
+            por
+            {'  '}
+            <strong>R$ 48,98</strong>
+          </div>
+        </Info>
+        <div>Button</div>
+      </Wrapper>
     </Container>
   );
 };
