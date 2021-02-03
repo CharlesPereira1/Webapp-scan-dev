@@ -27,6 +27,10 @@ export const Container = styled.div`
   flex-direction: column;
   align-items: center;
   margin-top: 2rem;
+
+  img {
+    margin-bottom: 30px;
+  }
 `;
 
 export const ScanMarker = styled.div`
