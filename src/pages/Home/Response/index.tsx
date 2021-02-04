@@ -1,10 +1,12 @@
 import React, { useEffect, useState } from 'react';
 import StarRatings from 'react-star-ratings';
+import { Link } from 'react-router-dom';
+import { MdArrowForward } from 'react-icons/md';
 
 import { getResponse } from '../../../services/api';
 import { colors } from '../../../styles/theme';
 
-import { Container, Wrapper, Cover, Info } from './styles';
+import { Container, Wrapper, Cover, Info, ButtonClick } from './styles';
 
 interface Props {
   codEan: string;
@@ -34,31 +36,35 @@ const Response: React.FC<Props> = ({ codEan }) => {
   console.log(codEan);
   return (
     <Container>
-      <Wrapper>
-        <Cover src="https://m.media-amazon.com/images/I/41IiBTZOGCL.jpg" />
-        <Info>
-          <h4>Habilidades Práticas do Agile Software</h4>
-          <div>
-            <StarRatings
-              rating={4.5}
-              starRatedColor={colors.yellow}
-              starDimension="18"
-              starSpacing="0"
-            />
-            {'  '}
-            (4.5)
-          </div>
+      <Link to="/book-details/">
+        <Wrapper>
+          <Cover src="https://m.media-amazon.com/images/I/41IiBTZOGCL.jpg" />
+          <Info>
+            <h4>Habilidades Práticas do Agile Software</h4>
+            <div>
+              <StarRatings
+                rating={4.5}
+                starRatedColor={colors.yellow}
+                starDimension="18"
+                starSpacing="0"
+              />
+              {'  '}
+              (4.5)
+            </div>
 
-          <div className="price">
-            <span>R$ 99,90</span>
-            {'  '}
-            por
-            {'  '}
-            <strong>R$ 48,98</strong>
-          </div>
-        </Info>
-        <div>Button</div>
-      </Wrapper>
+            <div className="price">
+              <span>R$ 99,90</span>
+              {'  '}
+              por
+              {'  '}
+              <strong>R$ 48,98</strong>
+            </div>
+          </Info>
+          <ButtonClick>
+            <MdArrowForward size={32} color={colors.white} />
+          </ButtonClick>
+        </Wrapper>
+      </Link>
     </Container>
   );
 };

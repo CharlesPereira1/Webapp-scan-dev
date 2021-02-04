@@ -51,3 +51,13 @@ export const Info = styled.div`
     margin-bottom: 5px;
   }
 `;
+
+export const ButtonClick = styled.div`
+  text-align: center;
+  margin-left: 5px;
+  padding: 0;
+
+  display: block;
+  background: ${colors.green};
+  border-radius: 5px;
+`;
