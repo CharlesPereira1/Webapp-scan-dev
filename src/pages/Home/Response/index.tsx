@@ -1,5 +1,3 @@
-/* eslint-disable react/jsx-one-expression-per-line */
-/* eslint-disable react/jsx-indent */
 import React, { useEffect, useState } from 'react';
 import StarRatings from 'react-star-ratings';
 import { Link } from 'react-router-dom';
@@ -14,7 +12,7 @@ interface Props {
   codEan: string;
 }
 
-interface RepoProps {
+export interface RepoProps {
   id: string;
   name: string;
   coverUrl: string;
@@ -55,12 +53,8 @@ const Response: React.FC<Props> = ({ codEan }) => {
               </div>
 
               <div className="price">
-                <span>
-                  R$
-                  {books?.price}{' '}
-                </span>
-                por R$
-                {books?.promotionalPrice}
+                <span>R$ {books?.price} </span>
+                por R$ {books?.promotionalPrice}
               </div>
             </Info>
             <ButtonClick>
