@@ -39,6 +39,7 @@ export const Info = styled.div`
   }
 
   .price {
+    margin-top: 5px;
     color: ${colors.metalDark};
 
     span {
@@ -49,6 +50,10 @@ export const Info = styled.div`
   @media (min-width: 320px) and (max-width: 480px) {
     font-size: 12px;
     margin-bottom: 5px;
+
+    h4 {
+      font-size: 12px;
+    }
   }
 `;
 

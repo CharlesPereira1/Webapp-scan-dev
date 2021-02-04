@@ -1,3 +1,5 @@
+/* eslint-disable react/jsx-one-expression-per-line */
+/* eslint-disable react/jsx-indent */
 import React, { useEffect, useState } from 'react';
 import StarRatings from 'react-star-ratings';
 import { Link } from 'react-router-dom';
@@ -22,12 +24,12 @@ interface RepoProps {
 }
 
 const Response: React.FC<Props> = ({ codEan }) => {
-  const [repoData, setRepoData] = useState<RepoProps[]>([]);
+  const [books, setBooks] = useState<RepoProps>();
 
   useEffect(() => {
     getResponse(codEan).then(res => {
       console.log(res.data);
-      setRepoData(res.data);
+      setBooks(res.data);
     });
 
     // loadResponse();
@@ -36,35 +38,37 @@ const Response: React.FC<Props> = ({ codEan }) => {
   console.log(codEan);
   return (
     <Container>
-      <Link to="/book-details/">
-        <Wrapper>
-          <Cover src="https://m.media-amazon.com/images/I/41IiBTZOGCL.jpg" />
-          <Info>
-            <h4>Habilidades Práticas do Agile Software</h4>
-            <div>
-              <StarRatings
-                rating={4.5}
-                starRatedColor={colors.yellow}
-                starDimension="18"
-                starSpacing="0"
-              />
-              {'  '}
-              (4.5)
-            </div>
+      {books && (
+        <Link to={`/book-details/${codEan}`}>
+          <Wrapper>
+            <Cover src={books?.coverUrl} />
+            <Info>
+              <h4>{books?.name}</h4>
+              <div>
+                <StarRatings
+                  rating={books?.rating}
+                  starRatedColor={colors.yellow}
+                  starDimension="18"
+                  starSpacing="0"
+                />
+                {'  '}({books?.rating})
+              </div>
 
-            <div className="price">
-              <span>R$ 99,90</span>
-              {'  '}
-              por
-              {'  '}
-              <strong>R$ 48,98</strong>
-            </div>
-          </Info>
-          <ButtonClick>
-            <MdArrowForward size={32} color={colors.white} />
-          </ButtonClick>
-        </Wrapper>
-      </Link>
+              <div className="price">
+                <span>
+                  R$
+                  {books?.price}{' '}
+                </span>
+                por R$
+                {books?.promotionalPrice}
+              </div>
+            </Info>
+            <ButtonClick>
+              <MdArrowForward size={32} color={colors.white} />
+            </ButtonClick>
+          </Wrapper>
+        </Link>
+      )}
     </Container>
   );
 };
