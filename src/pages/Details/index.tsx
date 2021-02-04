@@ -7,6 +7,7 @@ import { RepoProps } from '../Home/Response';
 
 import { colors } from '../../styles/theme';
 import { Container, Cover } from './styles';
+import GeneralScore from '../../components/GeneralScore';
 
 interface Props {
   ean: string;
@@ -41,6 +42,8 @@ const Details: React.FC = () => {
       <div className="price">
         <span>R$ {books?.price} </span> por R$ {books?.promotionalPrice}
       </div>
+
+      <GeneralScore scorie={books?.score as number} />
     </Container>
   );
 };

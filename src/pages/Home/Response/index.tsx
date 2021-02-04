@@ -19,6 +19,7 @@ export interface RepoProps {
   rating: number;
   promotionalPrice: number;
   price: number;
+  score: number;
 }
 
 const Response: React.FC<Props> = ({ codEan }) => {
@@ -29,8 +30,6 @@ const Response: React.FC<Props> = ({ codEan }) => {
       console.log(res.data);
       setBooks(res.data);
     });
-
-    // loadResponse();
   }, [codEan]);
 
   console.log(codEan);
