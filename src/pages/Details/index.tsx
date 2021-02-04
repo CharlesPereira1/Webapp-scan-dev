@@ -39,8 +39,7 @@ const Details: React.FC = () => {
       </div>
 
       <div className="price">
-        <span>R$ {books?.price} </span>
-        por R$ {books?.promotionalPrice}
+        <span>R$ {books?.price} </span> por R$ {books?.promotionalPrice}
       </div>
     </Container>
   );
