@@ -1,4 +1,4 @@
-import React, { useCallback, useState } from 'react';
+import React from 'react';
 
 import { calculateScore } from '../../utils/calculateScore';
 
@@ -15,9 +15,9 @@ const GeneralScore: React.FC<ScoreProps> = ({ scorie }) => {
     <>
       <Score scoreColor={color}>
         <span className="score-value">{scorie}</span>
-        <span>{recommended}</span>
+        <span>{label}</span>
       </Score>
-      {recommended && <Description>{label}</Description>}
+      {recommended && <Description>Recomendado pelos editores</Description>}
     </>
   );
 };

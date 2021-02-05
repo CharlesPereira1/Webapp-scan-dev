@@ -4,10 +4,11 @@ import StarRatings from 'react-star-ratings';
 
 import { getResponse } from '../../services/api';
 import { RepoProps } from '../Home/Response';
+import GeneralScore from '../../components/GeneralScore';
+import Scores from '../../components/Scores';
 
 import { colors } from '../../styles/theme';
 import { Container, Cover } from './styles';
-import GeneralScore from '../../components/GeneralScore';
 
 interface Props {
   ean: string;
@@ -44,6 +45,7 @@ const Details: React.FC = () => {
       </div>
 
       <GeneralScore scorie={books?.score as number} />
+      <Scores />
     </Container>
   );
 };
