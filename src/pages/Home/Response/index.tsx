@@ -12,6 +12,11 @@ interface Props {
   codEan: string;
 }
 
+export interface ScoresProps {
+  name: string;
+  value: number;
+}
+
 export interface RepoProps {
   id: string;
   name: string;
@@ -20,6 +25,7 @@ export interface RepoProps {
   promotionalPrice: number;
   price: number;
   score: number;
+  scores: [ScoresProps];
 }
 
 const Response: React.FC<Props> = ({ codEan }) => {
@@ -27,12 +33,10 @@ const Response: React.FC<Props> = ({ codEan }) => {
 
   useEffect(() => {
     getResponse(codEan).then(res => {
-      console.log(res.data);
       setBooks(res.data);
     });
   }, [codEan]);
 
-  console.log(codEan);
   return (
     <Container>
       {books && (

@@ -3,33 +3,26 @@ import { calculateScore } from '../../utils/calculateScore';
 
 import { Container, Score, Value } from './styles';
 
-const Scores: React.FC = () => {
+interface ScoresProps {
+  scores: [
+    {
+      name: string;
+      value: number;
+    },
+  ];
+}
+
+const Scores: React.FC<ScoresProps> = ({ scores }) => {
   return (
     <Container>
-      <Score scoreColor={calculateScore(2.5).color}>
-        <Value scoreColor={calculateScore(2.5).color}>
-          <span>{3.5}</span>
-        </Value>
-        <span>Tradução</span>
-      </Score>
-      <Score scoreColor={calculateScore(2.5).color}>
-        <Value scoreColor={calculateScore(2.5).color}>
-          <span>{3.5}</span>
-        </Value>
-        <span>Tradução</span>
-      </Score>
-      <Score scoreColor={calculateScore(2.5).color}>
-        <Value scoreColor={calculateScore(2.5).color}>
-          <span>{3.5}</span>
-        </Value>
-        <span>Tradução</span>
-      </Score>
-      <Score scoreColor={calculateScore(2.5).color}>
-        <Value scoreColor={calculateScore(2.5).color}>
-          <span>{3.5}</span>
-        </Value>
-        <span>Tradução</span>
-      </Score>
+      {scores?.map(data => (
+        <Score key={data.name} scoreColor={calculateScore(data.value).color}>
+          <Value scoreColor={calculateScore(data.value).color}>
+            <span>{data.value}</span>
+          </Value>
+          <span>{data.name}</span>
+        </Score>
+      ))}
     </Container>
   );
 };

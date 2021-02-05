@@ -15,13 +15,12 @@ interface Props {
 }
 
 const Details: React.FC = () => {
-  const [books, setBooks] = useState<RepoProps>();
+  const [books, setBooks] = useState<RepoProps>({} as RepoProps);
 
   const { ean } = useParams<Props>();
 
   useEffect(() => {
     getResponse(ean).then(res => {
-      console.log(res.data);
       setBooks(res.data);
     });
   }, [ean]);
@@ -39,13 +38,11 @@ const Details: React.FC = () => {
         />{' '}
         ({books?.rating})
       </div>
-
       <div className="price">
         <span>R$ {books?.price} </span> por R$ {books?.promotionalPrice}
       </div>
-
-      <GeneralScore scorie={books?.score as number} />
-      <Scores />
+      <GeneralScore scorie={books?.score} /> {/* {books?.score as number} */}
+      <Scores scores={books.scores} />
     </Container>
   );
 };
