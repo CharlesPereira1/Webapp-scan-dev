@@ -12,6 +12,24 @@ const Scores: React.FC = () => {
         </Value>
         <span>Tradução</span>
       </Score>
+      <Score scoreColor={calculateScore(2.5).color}>
+        <Value scoreColor={calculateScore(2.5).color}>
+          <span>{3.5}</span>
+        </Value>
+        <span>Tradução</span>
+      </Score>
+      <Score scoreColor={calculateScore(2.5).color}>
+        <Value scoreColor={calculateScore(2.5).color}>
+          <span>{3.5}</span>
+        </Value>
+        <span>Tradução</span>
+      </Score>
+      <Score scoreColor={calculateScore(2.5).color}>
+        <Value scoreColor={calculateScore(2.5).color}>
+          <span>{3.5}</span>
+        </Value>
+        <span>Tradução</span>
+      </Score>
     </Container>
   );
 };
