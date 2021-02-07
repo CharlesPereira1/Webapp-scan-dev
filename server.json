@@ -13,7 +13,10 @@
         { "name": "Códigos", "value": 4 },
         { "name": "Comunidade", "value": 5 },
         { "name": "Exemplos", "value": 4.8 }
-      ]
+      ],
+      "tecnologies": ["JavaScript", "ES2016", "Arquitetura", "TypeScript"],
+      "requeriments": ["JavaScript"],
+      "descriptions": "O React é uma biblioteca da linguagem JavaScript e uma das formas mais modernas para a criação de aplicações web. Ela trabalha de forma declarativa, eficiente e flexível, possibilitando a criação de interações complexas."
     }
   ]
 }

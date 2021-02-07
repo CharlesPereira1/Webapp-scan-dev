@@ -9,6 +9,7 @@ import Scores from '../../components/Scores';
 
 import { colors } from '../../styles/theme';
 import { Container, Cover } from './styles';
+import Extra from '../../components/Extra';
 
 interface Props {
   ean: string;
@@ -43,6 +44,7 @@ const Details: React.FC = () => {
       </div>
       <GeneralScore scorie={books?.score} /> {/* {books?.score as number} */}
       <Scores scores={books.scores} />
+      <Extra book={books} />
     </Container>
   );
 };

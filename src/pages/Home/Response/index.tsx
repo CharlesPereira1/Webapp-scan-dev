@@ -26,6 +26,9 @@ export interface RepoProps {
   price: number;
   score: number;
   scores: [ScoresProps];
+  tecnologies: string[];
+  requeriments: string[];
+  descriptions: string;
 }
 
 const Response: React.FC<Props> = ({ codEan }) => {
