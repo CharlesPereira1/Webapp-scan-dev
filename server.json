@@ -11,7 +11,8 @@
       "scores": [
         { "name": "Tradução", "value": 3.5 },
         { "name": "Códigos", "value": 4 },
-        { "name": "Comunidade", "value": 5 }
+        { "name": "Comunidade", "value": 5 },
+        { "name": "Exemplos", "value": 4.8 }
       ]
     }
   ]

@@ -13,8 +13,10 @@ export const Container = styled.div`
 `;
 
 export const Score = styled.div<ScoresProps>`
+  flex: 1;
   display: flex;
   align-items: center;
+  justify-content: center;
   margin-top: 25px;
   margin-right: 10px;
 
