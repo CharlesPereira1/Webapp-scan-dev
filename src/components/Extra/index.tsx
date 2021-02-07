@@ -1,6 +1,6 @@
 import React from 'react';
 
-import { Content } from './styles';
+import { Container, Content } from './styles';
 
 interface BookProps {
   book: {
@@ -12,7 +12,7 @@ interface BookProps {
 
 const Extra: React.FC<BookProps> = ({ book }) => {
   return (
-    <>
+    <Container>
       <Content>
         <span>Tecnologias:</span>
         <p>{book.tecnologies && book.tecnologies.join(', ')}</p>
@@ -25,7 +25,7 @@ const Extra: React.FC<BookProps> = ({ book }) => {
         <span>Descrição:</span>
         <p>{book.descriptions}</p>
       </Content>
-    </>
+    </Container>
   );
 };
 
