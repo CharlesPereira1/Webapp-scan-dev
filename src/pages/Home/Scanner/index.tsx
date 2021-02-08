@@ -15,61 +15,61 @@ interface DataProps {
 const scannerAttemps = 0;
 
 const Scanner: React.FC = () => {
-  // const onDetected = (data: DataProps) => {
-  //   console.log('passei aqui');
-  //   Quagga.offDetected(onDetected);
+  const onDetected = (data: DataProps) => {
+    console.log('passei aqui');
+    Quagga.offDetected(onDetected);
 
-  //   const barCode = data.codeResult.code;
+    const barCode = data.codeResult.code;
 
-  //   if (barCode) {
-  //     alert(barCode);
-  //     return;
-  //   }
+    if (barCode) {
+      alert(barCode);
+      return;
+    }
 
-  //   scannerAttemps++;
-  //   if (scannerAttemps >= 5) {
-  //     alert(
-  //       'Não é possivel fazer a leitura do código de barras, por favor, tente novamente.',
-  //     );
+    // scannerAttemps++;
+    if (scannerAttemps >= 5) {
+      alert(
+        'Não é possivel fazer a leitura do código de barras, por favor, tente novamente.',
+      );
 
-  //     console.log('scannerAttemps', scannerAttemps);
-  //     Quagga.onDetected(onDetected);
-  //   }
-  // };
+      console.log('scannerAttemps', scannerAttemps);
+      Quagga.onDetected(onDetected);
+    }
+  };
 
-  // useEffect(() => {
-  //   if (navigator.mediaDevices && navigator.mediaDevices.getUserMedia) {
-  //     Quagga.init(
-  //       {
-  //         inputStream: {
-  //           name: 'Live',
-  //           type: 'LiveStream',
-  //           target: document.querySelector('#video'),
-  //           constraints: {
-  //             facingMode: 'environment',
-  //           },
-  //         },
-  //         numOfWorker: 5,
-  //         locate: true,
-  //         decoder: {
-  //           readers: ['ean_reader', 'code_128_reader'],
-  //         },
-  //       },
-  //       (err: string) => {
-  //         if (err) {
-  //           console.error(err);
-  //           alert(
-  //             'Error ao abrir câmera do dispositivo, por favor, dê permissão para o uso.',
-  //           );
-  //         }
+  useEffect(() => {
+    if (navigator.mediaDevices && navigator.mediaDevices.getUserMedia) {
+      Quagga.init(
+        {
+          inputStream: {
+            name: 'Live',
+            type: 'LiveStream',
+            target: document.querySelector('#video'),
+            constraints: {
+              facingMode: 'environment',
+            },
+          },
+          numOfWorker: 5,
+          locate: true,
+          decoder: {
+            readers: ['ean_reader', 'code_128_reader'],
+          },
+        },
+        (err: string) => {
+          if (err) {
+            console.error(err);
+            alert(
+              'Error ao abrir câmera do dispositivo, por favor, dê permissão para o uso.',
+            );
+          }
 
-  //         Quagga.start();
-  //       },
+          Quagga.start();
+        },
 
-  //       Quagga.onDetected(onDetected),
-  //     );
-  //   }
-  // }, []); // eslint-disable-line
+        Quagga.onDetected(onDetected),
+      );
+    }
+  }, []); // eslint-disable-line
 
   return (
     <>
@@ -79,7 +79,7 @@ const Scanner: React.FC = () => {
           <IoScanOutline size={260} color="#fff" />
           <p>Aponte para o código de barras</p>
         </ScanMarker>
-        <img src={logoReact} alt="logo" />
+        {/* <img src={logoReact} alt="logo" /> */}
       </Container>
     </>
   );

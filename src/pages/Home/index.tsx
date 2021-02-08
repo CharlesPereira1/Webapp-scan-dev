@@ -9,7 +9,7 @@ const Home: React.FC = () => {
   return (
     <>
       <Scanner />
-      <Response codEan={ean} />
+      {ean && <Response codEan={ean} />}
     </>
   );
 };

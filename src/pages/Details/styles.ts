@@ -6,6 +6,13 @@ export const Container = styled.div`
   flex-direction: column;
   padding: 10px;
 
+  a {
+    position: fixed;
+    top: 15px;
+    left: 15px;
+    cursor: pointer;
+  }
+
   h4 {
     font-size: 26px;
     text-align: center;

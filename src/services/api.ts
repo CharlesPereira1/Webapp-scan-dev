@@ -1,7 +1,8 @@
 import axios from 'axios';
 
 const api = axios.create({
-  baseURL: 'http://localhost:2000/',
+  baseURL: 'https://api-f8b1c064.localhost.run/',
+  // baseURL: 'http://localhost:2000/',
 });
 
 // eslint-disable-next-line

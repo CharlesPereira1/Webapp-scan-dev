@@ -1,7 +1,8 @@
 import React, { useEffect, useState } from 'react';
-import { useParams } from 'react-router-dom';
+import { Link, useParams } from 'react-router-dom';
 import StarRatings from 'react-star-ratings';
 
+import { MdArrowBack } from 'react-icons/md';
 import { getResponse } from '../../services/api';
 import { RepoProps } from '../Home/Response';
 import GeneralScore from '../../components/GeneralScore';
@@ -28,6 +29,9 @@ const Details: React.FC = () => {
 
   return (
     <Container>
+      <Link to="/">
+        <MdArrowBack size={32} color={colors.green} />
+      </Link>
       <Cover src={books?.coverUrl} />
       <h4>{books?.name}</h4>
       <div>
